@@ -1,0 +1,25 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.titlePage {
+  font-weight: bold;
+  font-family: "Angsana New";
+  font-size: 3rem;
+  margin-left: 1rem;
+}
+.titlePageContact {
+  font-weight: bold;
+  font-family: "Angsana New";
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+
+@media (max-width: 600px) {
+
+  .titlePage {
+    font-size: 1.5rem;
+  }
+  .titlePageContact {
+    font-size: 1rem;
+  }
+}

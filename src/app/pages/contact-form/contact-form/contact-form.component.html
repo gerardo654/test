@@ -1,0 +1,52 @@
+<form action="" fxLayout="column" class="p-5"  [formGroup]="form">
+  <div fxFill fxLayoutAlign="center center">
+    <h2>Contact form</h2>
+  </div>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name">
+    <mat-hint>Only Caracters and numbers</mat-hint>
+    <mat-error> Only Caracters and numbers </mat-error>
+    <mat-icon matSuffix *ngIf="form.controls['name'].valid" class="isCorrect" >check_circle</mat-icon>
+    <mat-icon matSuffix *ngIf="form.controls['name'].invalid" class="isInCorrect" >cancel</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>E-mail</mat-label>
+    <input matInput formControlName="email" type="email">
+    <mat-error> Write a correct E-mail </mat-error>
+    <mat-icon matSuffix *ngIf="form.controls['email'].valid" class="isCorrect" >check_circle</mat-icon>
+    <mat-icon matSuffix *ngIf="form.controls['email'].invalid" class="isInCorrect" >cancel</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Phone number</mat-label>
+    <input matInput formControlName="phone">
+    <mat-icon matSuffix *ngIf="form.controls['phone'].valid" class="isCorrect" >check_circle</mat-icon>
+    <mat-icon matSuffix *ngIf="form.controls['phone'].invalid" class="isInCorrect" >cancel</mat-icon>
+    <mat-hint>Include area code</mat-hint>
+    <span matPrefix>+</span>
+    <mat-error> Only numbers </mat-error>
+  </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Message</mat-label>
+      <textarea matInput formControlName="message"></textarea>
+      <mat-icon matSuffix *ngIf="form.controls['message'].valid" class="isCorrect" >check_circle</mat-icon>
+      <mat-icon matSuffix *ngIf="form.controls['message'].invalid" class="isInCorrect" >cancel</mat-icon>
+      <mat-error> Min 5 Max {{MaxTextArea}}</mat-error>
+    </mat-form-field>
+
+  <button
+    mat-button
+    [disabled]="!onCheckValid()"
+    (click)="onSend()"> Send </button>
+</form>
+
+<div class="overlay" *ngIf="mostrarrpgres">
+  <div style="z-index: 9999999; position: absolute; height: 100vh; width: 100%" fxLayoutAlign="center center">
+    <div class="lds-ripple"><div></div><div></div></div>
+  </div>
+</div>
+

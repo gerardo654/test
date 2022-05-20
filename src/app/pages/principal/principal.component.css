@@ -1,0 +1,35 @@
+table {
+  width: 100%;
+}
+.container-table {
+  padding: 2rem;
+}
+.banner {
+  background-image: url("../../../assets/banner1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 80vh;
+  background-attachment: fixed;
+}
+.subtitle {
+  font-size: xxx-large;
+  font-weight: bold;
+  color: white;
+  text-shadow: 4px 4px 14px #000000;
+}
+
+@media (max-width: 600px) {
+
+  .subtitle {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .banner {
+    height: 60vh;
+  }
+  .container-table {
+    padding: 1rem;
+  }
+}

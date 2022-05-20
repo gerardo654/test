@@ -1,0 +1,24 @@
+<div class="banner2" fxLayoutAlign="center end" fxLayout="row">
+  <span class="title">Contact</span>
+
+</div>
+
+<div class="p-5" fxLayoutAlign="space-between start" fxLayout="row wrap">
+  <app-contact-form
+    [MaxTextArea]="NumberMax"
+    (IsValidEvent)="onChangeformValid($event)"
+    (HasBeenChecked)="onChangeSend($event)"
+    fxFlex="40"
+    fxFlex.xs="100"
+    fxFlex.sm="48"
+  ></app-contact-form>
+  <div fxFlex="30"
+       fxFlex.sm="48"
+       fxFlex.xs="100"
+       fxLayout="column">
+
+    <span class="is-valid" *ngIf="isValid">¡Is Valid Form!</span>
+    <span class="is-valid" *ngIf="iSend">¡Has been Send!</span>
+
+  </div>
+</div>
