@@ -11,6 +11,6 @@ export class ContactService {
               private http: HttpClient) { }
 
   onSendFormContact(data: any): Observable<any> {
-    return this.http.post<any>(this.config.url + 'prust/wikipedia-movie-data/master/movies.json', data);
+    return this.http.post<any>(this.config.url + 'data', data);
   }
 }
