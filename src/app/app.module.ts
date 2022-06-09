@@ -20,6 +20,7 @@ import {MdbCarouselModule} from "mdb-angular-ui-kit/carousel";
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 // components
 
@@ -35,6 +36,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ContactFormModule } from './pages/contact-form/contact-form.module';
 import { environment } from '../environments/environment';
 
+// api google
 const configData = {
   url: environment.URL
 };
@@ -68,6 +70,7 @@ const configData = {
     MdbCarouselModule,
     MatDialogModule,
     MatToolbarModule,
+    MatExpansionModule,
     ContactFormModule.forRoot(configData)
   ],
   providers: [

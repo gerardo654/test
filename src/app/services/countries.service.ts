@@ -6,11 +6,11 @@ import {HttpClient} from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class MoviesService {
+export class CountriesService {
   url = environment.URL;
   constructor(private http: HttpClient) { }
 
   getMovies(): Observable<any> {
-    return this.http.get<any>(this.url + 'prust/wikipedia-movie-data/master/movies.json');
+    return this.http.get<any>(this.url + 'v3.1/all');
   }
 }

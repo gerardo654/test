@@ -4,12 +4,11 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {LiveAnnouncer} from '@angular/cdk/a11y';
 import {MatSort, Sort} from '@angular/material/sort';
-import {MoviesService} from "../../services/movies.service";
-import { WelcomeComponent } from '../../shared/welcome/welcome.component';
+import {CountriesService} from "../../services/countries.service";
 import { DetailsComponent } from '../../shared/details/details.component';
 
 
-export interface MovieElement {
+export interface CountryElement {
   title: string;
   year: number;
 }
@@ -20,13 +19,13 @@ export interface MovieElement {
   styleUrls: ['./principal.component.css']
 })
 export class PrincipalComponent implements OnInit  {
-  displayedColumns: string[] = ['icon','title', 'year', 'details'];
-  dataSource = new MatTableDataSource<MovieElement>([]);
+  displayedColumns: string[] = ['flag','name', 'region', 'details'];
+  dataSource = new MatTableDataSource<CountryElement>([]);
   mostrarrpgres = false;
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
   @ViewChild(MatSort) sort: MatSort | undefined;
 
-  constructor(private service: MoviesService,
+  constructor(private service: CountriesService,
               private _liveAnnouncer: LiveAnnouncer,
               public dialog: MatDialog) {
   }
@@ -50,9 +49,10 @@ export class PrincipalComponent implements OnInit  {
     );
   }
   onOpenDetailsMovie(object: any) {
+    console.log(object);
     this.dialog.open(DetailsComponent, {
       data: {
-        oMovie: object,
+        oCountrie: object,
       },
     });
   }

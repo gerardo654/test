@@ -7,6 +7,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .banner-principal {
   height: 100vh!important;
 }
+/*start mat-dialog css*/
+
+.mat-dialog-content {
+  margin: 0!important;
+  padding: 0!important;
+}
+/*end mat-dialog css*/
+
 
 /*start loader css*/
 .lds-ripple {

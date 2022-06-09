@@ -4,7 +4,7 @@
      fxLayoutAlign="center center"
      fxLayout="row">
 
-  <span class="subtitle">we are a dedicated to the cinema  </span>
+  <span class="subtitle">we are a dedicated to the Countries  </span>
 </div>
 
 
@@ -24,21 +24,23 @@
          matSort
          (matSortChange)="announceSortChange($event)">
 
-    <ng-container matColumnDef="icon">
-      <th mat-header-cell *matHeaderCellDef >  </th>
+    <ng-container matColumnDef="flag">
+      <th mat-header-cell *matHeaderCellDef >  Flag </th>
       <td mat-cell *matCellDef="let element">
-        <mat-icon fxShow.xs="false">movie</mat-icon>
+        <img [src]="element.flags.png"
+             [alt]="element.name.official"
+              fxFlex="10">
       </td>
     </ng-container>
 
-    <ng-container matColumnDef="title">
-      <th mat-header-cell *matHeaderCellDef  mat-sort-header> Title </th>
-      <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef  mat-sort-header> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name.official}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="year">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Year </th>
-      <td mat-cell *matCellDef="let element"> {{element.year}} </td>
+    <ng-container matColumnDef="region">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Region </th>
+      <td mat-cell *matCellDef="let element"> {{element.region}} </td>
     </ng-container>
 
     <ng-container matColumnDef="details">

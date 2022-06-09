@@ -1,8 +1,23 @@
-<mat-toolbar>
-  <button mat-icon-button routerLink="">
+<mat-toolbar fxLayout="row wrap" fxLayoutAlign="space-between center">
+  <span
+    class="titlePage"
+    fxFlex="30">
+    Country Gera
+  </span>
+
+  <button
+    mat-icon-button
+    routerLink=""
+    fxFlex="30"
+    fxLayoutAlign="center center">
     <img src="../../../assets/logo.png" alt="" fxFlex="100">
   </button>
-  <span class="titlePage">Movie Gera</span>
-  <span class="example-spacer"></span>
-  <button mat-button routerLink="contact" class="titlePageContact">Contact <mat-icon> contact_mail</mat-icon></button>
+
+  <button mat-button
+          routerLink="contact"
+          class="titlePageContact"
+          fxFlex="30">
+    Contact
+    <mat-icon> contact_mail</mat-icon>
+  </button>
 </mat-toolbar>

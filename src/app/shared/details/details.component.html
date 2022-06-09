@@ -1,25 +1,52 @@
-<h1 mat-dialog-title>{{data.oMovie.title}}</h1>
-<div mat-dialog-content fxLayout="row wrap" fxLayoutAlign="space-between start">
-  <div fxFlex="100" fxLayoutAlign="center center">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/ovcaSUhcC1s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
-  <span fxFlex="100" class="fw-bold">Year published: {{data.oMovie.year}}</span>
-  <mat-list fxFlex="48">
-    <div mat-subheader>Cast</div>
-    <mat-list-item *ngFor="let cast of data.oMovie.cast" >
-      <mat-icon> person_pin</mat-icon>
-      <div mat-line>{{cast}}</div>
-    </mat-list-item>
-  </mat-list>
+<mat-dialog-content
+  fxLayout="row wrap"
+  fxLayoutAlign="space-between start">
+  <div
+    [ngStyle]="{'background-image': 'url(' + data.oCountrie.flags.png + ')'}"
+    class="back-flag">
+    <div
+      class="back-filter p-4"
+      fxLayoutAlign="center center">
+      {{data.oCountrie.name.official}}
 
-  <mat-list fxFlex="48">
-    <div mat-subheader>Genders</div>
-    <mat-list-item *ngFor="let genre of data.oMovie.genres" >
-      <mat-icon>airplay</mat-icon>
-      <div mat-line>{{genre}}</div>
-    </mat-list-item>
-  </mat-list>
-</div>
+    </div>
+  </div>
+  <div class="details">
+    <mat-accordion class="example-headers-align" multi>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Currencies
+          </mat-panel-title>
+          <mat-panel-description>
+            <mat-icon>attach_money</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        {{data.oCountrie.currencies | json}}
+
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Region and subRegion
+          </mat-panel-title>
+          <mat-panel-description>
+            <mat-icon>map</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        {{data.oCountrie.region}} -
+        {{data.oCountrie.subregion}}
+      </mat-expansion-panel>
+    </mat-accordion>
+
+  </div>
+
+</mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close [mat-dialog-close]="true" cdkFocusInitial>Acept</button>
+  <button
+    mat-button
+    mat-dialog-close
+    [mat-dialog-close]="true"
+    cdkFocusInitial>Acept</button>
 </mat-dialog-actions>
